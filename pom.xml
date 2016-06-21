@@ -62,7 +62,12 @@
 					<configuration>
 						<sourceDirectory>${project.basedir}/src/docs/asciidoc</sourceDirectory>
 						<baseDir>${project.basedir}/src/docs/asciidoc-resources</baseDir>
-						<backend>xhtml5</backend>
+						<outputDirectory>${project.basedir}/src/main/resources/static/docs</outputDirectory>
+						<backend>html</backend>
+						<doctype>book</doctype>
+						<!--<attributes>
+							<stylesheet>my-style.css</stylesheet>
+						</attributes>-->
 						<requires>
 							<require>asciidoctor-diagram</require>
 						</requires>
@@ -108,7 +113,7 @@
 						<configuration>
 							<sourceHighlighter>coderay</sourceHighlighter>
 							<attributes>
-								<imagesoutdir>${project.basedir}/target/generated-docs/images</imagesoutdir>
+								<imagesoutdir>${project.basedir}/src/main/resources/static/docs/images</imagesoutdir>
 								<imagesdir>images</imagesdir>
 								<toc>left</toc>
 								<icons>font</icons>

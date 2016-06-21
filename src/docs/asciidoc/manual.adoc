@@ -7,6 +7,19 @@ Jane Doe;
 :toclevels: 4
 :sectlinks:
 
+
+
+
+
+:icons: font
+// First unset attribute to remotely link FontAwesome CSS
+:iconfont-remote!:
+// Specify name of FontAwesome CSS.
+:iconfont-name: fontawesome-4.1.0
+// We can optionally set the directory where CSS is stored.
+:stylesdir: css
+
+
 [introduction]
 = Introduction
 

@@ -65,9 +65,6 @@
 						<outputDirectory>${project.basedir}/src/main/resources/static/docs</outputDirectory>
 						<backend>html</backend>
 						<doctype>book</doctype>
-						<attributes>
-							<stylesheet>css/my-style.css</stylesheet>
-						</attributes>
 						<requires>
 							<require>asciidoctor-diagram</require>
 						</requires>

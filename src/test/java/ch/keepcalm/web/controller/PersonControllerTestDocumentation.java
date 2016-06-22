@@ -46,7 +46,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = RestDocsApplication.class)
 @WebAppConfiguration
-public class PersonControllerTest {
+public class PersonControllerTestDocumentation {
     @Rule
     public final RestDocumentation restDocumentation = new RestDocumentation(
             "target/generated-snippets"

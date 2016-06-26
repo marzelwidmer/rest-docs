@@ -632,7 +632,7 @@ use of HTTP status codes.</p>
 <h4 id="_example_request"><a class="link" href="#_example_request">Example request</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'http://localhost:8080/people' -i -H 'Accept: application/json'</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://rest-docs.scapp.io/people' -i -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 </div>
@@ -701,7 +701,7 @@ Content-Length: 196
 <h4 id="_example_request_2"><a class="link" href="#_example_request_2">Example request</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'http://localhost:8080/people/4' -i -H 'Accept: application/json'</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://rest-docs.scapp.io/people/4' -i -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 </div>
@@ -760,7 +760,7 @@ Content-Length: 62
 <h4 id="_example_request_3"><a class="link" href="#_example_request_3">Example request</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'http://localhost:8080/people' -i -X POST -H 'Content-Type: application/json' -d '{
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://rest-docs.scapp.io/people' -i -X POST -H 'Content-Type: application/json' -d '{
   "firstName" : "Anne",
   "lastName" : "Queen"
 }'</code></pre>
@@ -814,7 +814,7 @@ Content-Length: 62
 <h4 id="_example_request_4"><a class="link" href="#_example_request_4">Example request</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'http://localhost:8080/people/1' -i -X PUT -H 'Content-Type: application/json' -d '{
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://rest-docs.scapp.io/people/1' -i -X PUT -H 'Content-Type: application/json' -d '{
   "firstName" : "Edward",
   "lastName" : "King"
 }'</code></pre>

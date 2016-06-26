@@ -16,6 +16,7 @@ import org.springframework.restdocs.RestDocumentation;
 import org.springframework.restdocs.constraints.ConstraintDescriptions;
 import org.springframework.restdocs.mockmvc.RestDocumentationResultHandler;
 import org.springframework.restdocs.payload.FieldDescriptor;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
@@ -43,6 +44,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * Created by stevenheyninck on 29/10/15.
  */
+@ActiveProfiles(profiles = {"junit"})
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = RestDocsApplication.class)
 @WebAppConfiguration
@@ -69,7 +71,10 @@ public class PersonControllerTestDocumentation {
     public void setUp() {
         this.document = document("{method-name}", preprocessRequest(prettyPrint()), preprocessResponse(prettyPrint()));
         this.mockMvc = MockMvcBuilders.webAppContextSetup(this.context)
-                .apply(documentationConfiguration(this.restDocumentation))
+                .apply(documentationConfiguration(this.restDocumentation).uris()
+                        .withScheme("https")
+                        .withHost("rest-docs.scapp.io")
+                        .withPort(443))
                 .alwaysDo(this.document)
                 .build();
     }

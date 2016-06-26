@@ -1,5 +1,5 @@
 = Person-service Getting Started Guide
-Jane Doe;
+Marcel Widmer;
 :doctype: book
 :icons: font
 :source-highlighter: highlightjs

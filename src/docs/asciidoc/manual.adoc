@@ -1,4 +1,4 @@
-= Person-service Getting Started Guide
+= rest-docs person-service Getting Started Guide
 Marcel Widmer;
 :doctype: book
 :icons: font

@@ -1,11 +1,13 @@
-= Person-service Getting Started Guide
-Jane Doe;
+= rest-docs person-service Getting Started Guide
+Marcel Widmer;
 :doctype: book
 :icons: font
 :source-highlighter: highlightjs
 :toc: left
 :toclevels: 4
 :sectlinks:
+
+
 
 [introduction]
 = Introduction

@@ -1,5 +1,3 @@
-== Architecture
-
 === Context
 
 [ditaa, "context-diagram"]

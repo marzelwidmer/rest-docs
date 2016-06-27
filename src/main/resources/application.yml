@@ -1,3 +1,9 @@
+info:
+  build:
+    artifact: @project.artifactId@
+    description : @project.description@
+    version : @project.version@
+
 spring:
   application:
     name: person-service

@@ -16,7 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/people")
-public class PersonController {
+public class PersonController  {
+
     @Autowired
     private PersonRepository personRepository;
 

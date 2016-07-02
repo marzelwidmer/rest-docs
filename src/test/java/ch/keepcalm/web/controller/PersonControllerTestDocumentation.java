@@ -13,15 +13,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.http.MediaType;
 import org.springframework.restdocs.RestDocumentation;
-import org.springframework.restdocs.constraints.ConstraintDescriptions;
 import org.springframework.restdocs.mockmvc.RestDocumentationResultHandler;
-import org.springframework.restdocs.payload.FieldDescriptor;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.util.StringUtils;
 import org.springframework.web.context.WebApplicationContext;
 
 import java.util.HashMap;
@@ -36,7 +33,6 @@ import static org.springframework.restdocs.operation.preprocess.Preprocessors.pr
 import static org.springframework.restdocs.payload.PayloadDocumentation.fieldWithPath;
 import static org.springframework.restdocs.payload.PayloadDocumentation.requestFields;
 import static org.springframework.restdocs.payload.PayloadDocumentation.responseFields;
-import static org.springframework.restdocs.snippet.Attributes.key;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -49,6 +45,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringApplicationConfiguration(classes = RestDocsApplication.class)
 @WebAppConfiguration
 public class PersonControllerTestDocumentation {
+
     @Rule
     public final RestDocumentation restDocumentation = new RestDocumentation(
             "target/generated-snippets"
@@ -163,18 +160,5 @@ public class PersonControllerTestDocumentation {
         return personRepository.save(new Person(firstName, lastName));
     }
 
-    private static class ConstrainedFields {
 
-        private final ConstraintDescriptions constraintDescriptions;
-
-        ConstrainedFields(Class<?> input) {
-            this.constraintDescriptions = new ConstraintDescriptions(input);
-        }
-
-        private FieldDescriptor withPath(String path) {
-            return fieldWithPath(path).attributes(key("constraints").value(StringUtils
-                    .collectionToDelimitedString(this.constraintDescriptions
-                            .descriptionsForProperty(path), ". ")));
-        }
-    }
 }

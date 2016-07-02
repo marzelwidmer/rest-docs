@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Created by hkesq on 20.06.2016.
+ * Created by Marcel Widmer on 20.06.2016.
  */
 @RestController
 @RequestMapping("/people")
@@ -24,26 +24,26 @@ public class PersonController  {
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public Iterable<Person> listPeople() {
-        return personService.findAll();
+        return personService.findAllPersons();
     }
 
     @RequestMapping(value="/{id}", method = RequestMethod.GET)
     public Person getPerson(@PathVariable("id") Long id) {
-        return personService.findOne(id);
+        return personService.findOnePerson(id);
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public void createPerson(@RequestBody Person person) {
-        personService.save(new Person(person.getFirstName(), person.getLastName()));
+        personService.saveOnePerson(new Person(person.getFirstName(), person.getLastName()));
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void updatePerson(@PathVariable("id") Long id, @RequestBody Person person) {
-        Person existingPerson = personService.findOne(id);
+        Person existingPerson = personService.findOnePerson(id);
         existingPerson.setFirstName(person.getFirstName());
         existingPerson.setLastName(person.getLastName());
-        personService.save(existingPerson);
+        personService.saveOnePerson(existingPerson);
     }
 }

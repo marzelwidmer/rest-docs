@@ -14,15 +14,15 @@ public class PersonService {
     @Autowired
     private PersonRepository personRepository;
 
-    public Iterable<Person> findAll() {
+    public Iterable<Person> findAllPersons() {
        return personRepository.findAll();
     }
 
-    public Person findOne(Long id) {
+    public Person findOnePerson(Long id) {
         return personRepository.findOne(id);
     }
 
-    public void save(Person person) {
+    public void saveOnePerson(Person person) {
         personRepository.save(person);
     }
 }

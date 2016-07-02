@@ -11,12 +11,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * Created by Marcel Widmer on 20.06.2016.
  */
 @RestController
 @RequestMapping("/people")
-public class PersonController  {
+public class PersonController {
 
 
     @Autowired
@@ -27,7 +29,8 @@ public class PersonController  {
         return personService.findAllPersons();
     }
 
-    @RequestMapping(value="/{id}", method = RequestMethod.GET)
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public Person getPerson(@PathVariable("id") Long id) {
         return personService.findOnePerson(id);
     }
@@ -46,4 +49,8 @@ public class PersonController  {
         existingPerson.setLastName(person.getLastName());
         personService.saveOnePerson(existingPerson);
     }
+
+
+
+
 }

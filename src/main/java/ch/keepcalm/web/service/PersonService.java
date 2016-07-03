@@ -43,4 +43,9 @@ public class PersonService {
         }
         return loggingStoreAndLinks;
     }
+
+
+    public void deleteUser(Long id) {
+        personRepository.delete(id);
+    }
 }
